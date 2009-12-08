@@ -109,7 +109,7 @@ void StatusListPrivate::addEntry( const Entry &entry )
 
         if ( entry.type == Entry::Status ) {
             QPixmap pm;
-            QPixmapCache::find( entry.userInfo.imageUrl, &pm );
+            QPixmapCache::find( entry.userInfo.imageUrl, pm );
             if ( !pm.isNull())
                 setImageForUrl( entry.userInfo.imageUrl, &pm );
             else
@@ -559,3 +559,4 @@ void StatusList::setMaxCount( int maxCount )
 {
     StatusListPrivate::maxCount = maxCount;
 }
+
